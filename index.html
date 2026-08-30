@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teachers' Day 2026 — Marvel Minds Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --primary: #6C3CE1;
+  --primary-dark: #4A1FB8;
+  --gold: #FFD700;
+  --gold-dark: #E6B800;
+  --bg-dark: #0D0B21;
+  --bg-card: rgba(255,255,255,0.07);
+  --bg-card-hover: rgba(255,255,255,0.12);
+  --text: #FFFFFF;
+  --text-muted: #B8B5D0;
+  --glass: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.15);
+  --gradient-1: linear-gradient(135deg, #6C3CE1, #E040FB);
+  --gradient-2: linear-gradient(135deg, #FFD700, #FF6B35);
+  --gradient-3: linear-gradient(135deg, #00C9FF, #92FE9D);
+  --shadow: 0 8px 32px rgba(108,60,225,0.3);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(13,11,33,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+.navbar.scrolled { padding: 10px 40px; background: rgba(13,11,33,0.95); }
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  background: var(--gradient-2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+  background: var(--gold); transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; overflow: hidden;
+  background: radial-gradient(ellipse at 30% 50%, rgba(108,60,225,0.3), transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(224,64,251,0.2), transparent 60%),
+              var(--bg-dark);
+}
+.hero-particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute;
+  animation: floatParticle linear infinite;
+  opacity: 0.6;
+  font-size: 1.2rem;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
+.hero-badge {
+  display: inline-block; padding: 8px 24px; border-radius: 50px;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  font-size: 0.85rem; font-weight: 500; color: var(--gold);
+  margin-bottom: 24px; letter-spacing: 2px; text-transform: uppercase;
+  animation: fadeInDown 1s ease 0.3s both;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900; line-height: 1.1;
+  margin-bottom: 16px;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.hero-title .highlight {
+  background: var(--gradient-2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.hero-title .highlight::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient-2); border-radius: 2px;
+  animation: expandWidth 1s ease 1.5s both;
+}
+.hero-school {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  color: var(--gold); margin-bottom: 12px;
+  animation: fadeInUp 1s ease 0.7s both;
+}
+.hero-tagline {
+  font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px;
+  animation: fadeInUp 1s ease 0.9s both;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 36px; border-radius: 50px;
+  background: var(--gradient-2); color: var(--bg-dark);
+  font-weight: 600; font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1s ease 1.1s both;
+  cursor: pointer; border: none;
+}
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,215,0,0.4); }
+.scroll-indicator {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+.scroll-indicator svg { width: 30px; height: 30px; fill: var(--gold); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes expandWidth { from { width: 0; } to { width: 100%; } }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-15px); } 60% { transform: translateX(-50%) translateY(-8px); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(108,60,225,0.4); } 50% { box-shadow: 0 0 40px rgba(108,60,225,0.7); } }
+@keyframes typewriter { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 0%, 100% { border-color: var(--gold); } 50% { border-color: transparent; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes heartBeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.1); } }
+
+/* ===== SECTION COMMON ===== */
+.section {
+  padding: 100px 20px;
+  max-width: 1200px; margin: 0 auto;
+  position: relative;
+}
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-label {
+  font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+  margin-bottom: 16px;
+}
+.section-subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1rem; }
+.divider {
+  width: 60px; height: 3px; border-radius: 2px;
+  background: var(--gradient-2); margin: 16px auto 0;
+}
+
+/* Animate on scroll */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-60px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(60px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ===== STATS SECTION ===== */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.stat-card {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 32px 20px; text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  animation: glow 3s ease-in-out infinite;
+}
+.stat-card:hover { transform: translateY(-8px); background: var(--bg-card-hover); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; font-weight: 900;
+  background: var(--gradient-2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.stat-label { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+
+/* ===== TEACHERS SECTION ===== */
+.teachers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
+.teacher-card {
+  perspective: 1000px; height: 360px; cursor: pointer;
+}
+.teacher-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+.teacher-card:hover .teacher-card-inner { transform: rotateY(180deg); }
+.teacher-front, .teacher-back {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+.teacher-front {
+  background: var(--glass);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 30px;
+}
+.teacher-avatar {
+  width: 120px; height: 120px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.8rem; font-weight: 700; color: white;
+  margin-bottom: 16px; position: relative;
+}
+.teacher-avatar::after {
+  content: ''; position: absolute; inset: -4px;
+  border-radius: 50%; border: 3px solid var(--gold);
+  animation: spin 8s linear infinite;
+}
+.teacher-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;
+}
+.teacher-role { color: var(--gold); font-size: 0.85rem; font-weight: 500; }
+.teacher-subject { color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; }
+.teacher-back {
+  background: var(--gradient-1);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 30px; text-align: center;
+  transform: rotateY(180deg);
+}
+.teacher-quote {
+  font-style: italic; font-size: 0.95rem; line-height: 1.6;
+  margin-bottom: 16px; position: relative;
+}
+.teacher-quote::before { content: '"'; font-size: 3rem; color: rgba(255,255,255,0.3); position: absolute; top: -20px; left: -10px; }
+.teacher-fun-fact { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 8px; }
+.teacher-fun-fact span { font-size: 1.2rem; }
+
+/* ===== GALLERY SECTION ===== */
+.gallery-filter { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 8px 24px; border-radius: 50px; border: 1px solid var(--glass-border);
+  background: transparent; color: var(--text-muted); font-family: 'Poppins';
+  font-size: 0.85rem; cursor: pointer; transition: all 0.3s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--primary); color: white; border-color: var(--primary);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+.gallery-item {
+  position: relative; border-radius: 16px; overflow: hidden;
+  aspect-ratio: 4/3; cursor: pointer;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  transition: transform 0.3s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-placeholder {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  font-size: 0.85rem; color: var(--text-muted);
+}
+.gallery-placeholder .icon { font-size: 2.5rem; }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.8));
+  display: flex; align-items: flex-end; padding: 16px;
+  opacity: 0; transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay-text { font-size: 0.9rem; font-weight: 500; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.92); backdrop-filter: blur(20px);
+  display: none; align-items: center; justify-content: center;
+  flex-direction: column; padding: 40px;
+  animation: fadeInUp 0.3s ease;
+}
+.lightbox.active { display: flex; }
+.lightbox-content {
+  max-width: 800px; max-height: 70vh; border-radius: 16px; overflow: hidden;
+  position: relative;
+}
+.lightbox-content img { width: 100%; height: 100%; object-fit: contain; }
+.lightbox-caption { color: white; text-align: center; margin-top: 16px; font-size: 1rem; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); border: none;
+  color: white; font-size: 1.5rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.3); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); border: none;
+  color: white; font-size: 1.3rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+/* ===== TIMELINE ===== */
+.timeline { position: relative; padding: 20px 0; }
+.timeline::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 3px; background: var(--gradient-1);
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative; width: 50%; padding: 20px 40px;
+}
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-dot {
+  position: absolute; top: 30px; width: 20px; height: 20px;
+  background: var(--gold); border-radius: 50%;
+  border: 4px solid var(--bg-dark);
+  z-index: 1;
+}
+.timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+.timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+.timeline-content {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 16px; padding: 24px;
+  transition: transform 0.3s;
+}
+.timeline-content:hover { transform: translateY(-4px); }
+.timeline-date { color: var(--gold); font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; letter-spacing: 1px; }
+.timeline-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+.timeline-desc { color: var(--text-muted); font-size: 0.9rem; }
+.timeline-emoji { font-size: 2rem; margin-bottom: 8px; display: block; }
+
+/* ===== QUIZ SECTION ===== */
+.quiz-container {
+  max-width: 700px; margin: 0 auto;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 24px; padding: 40px;
+  position: relative; overflow: hidden;
+}
+.quiz-container::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(108,60,225,0.1), transparent 30%);
+  animation: spin 10s linear infinite;
+}
+.quiz-inner { position: relative; z-index: 1; }
+.quiz-progress { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-bottom: 30px; overflow: hidden; }
+.quiz-progress-bar { height: 100%; background: var(--gradient-2); border-radius: 3px; transition: width 0.5s ease; }
+.quiz-question-num { font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 2px; }
+.quiz-question { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 30px; }
+.quiz-options { display: grid; gap: 12px; }
+.quiz-option {
+  padding: 16px 24px; border-radius: 14px;
+  background: rgba(255,255,255,0.05); border: 2px solid var(--glass-border);
+  cursor: pointer; transition: all 0.3s; font-size: 1rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.quiz-option:hover { background: rgba(108,60,225,0.2); border-color: var(--primary); }
+.quiz-option.selected { background: rgba(108,60,225,0.3); border-color: var(--primary); }
+.quiz-option.correct { background: rgba(46,213,115,0.2); border-color: #2ED573; }
+.quiz-option.wrong { background: rgba(255,71,87,0.2); border-color: #FF4757; }
+.quiz-option-letter {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); display: flex;
+  align-items: center; justify-content: center;
+  font-weight: 600; font-size: 0.85rem; flex-shrink: 0;
+}
+.quiz-btn {
+  margin-top: 24px; padding: 14px 36px; border-radius: 50px;
+  background: var(--gradient-2); border: none;
+  color: var(--bg-dark); font-weight: 600; font-size: 1rem;
+  cursor: pointer; transition: all 0.3s; font-family: 'Poppins';
+}
+.quiz-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,215,0,0.4); }
+.quiz-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+.quiz-result { text-align: center; padding: 20px 0; }
+.quiz-result-score {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem; font-weight: 900;
+  background: var(--gradient-2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.quiz-result-msg { font-size: 1.2rem; color: var(--text-muted); margin-top: 8px; }
+.quiz-result-emoji { font-size: 4rem; margin-bottom: 16px; }
+
+/* ===== MESSAGE BOARD ===== */
+.msg-board {
+  max-width: 800px; margin: 0 auto;
+}
+.msg-form {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 32px; margin-bottom: 30px;
+}
+.msg-form h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 20px; }
+.msg-input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.msg-input {
+  width: 100%; padding: 14px 20px; border-radius: 12px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+  color: white; font-family: 'Poppins'; font-size: 0.95rem;
+  outline: none; transition: border-color 0.3s;
+}
+.msg-input:focus { border-color: var(--primary); }
+.msg-input::placeholder { color: rgba(255,255,255,0.3); }
+textarea.msg-input { resize: vertical; min-height: 100px; }
+.msg-submit {
+  padding: 12px 32px; border-radius: 50px;
+  background: var(--gradient-2); border: none;
+  color: var(--bg-dark); font-weight: 600; font-size: 0.95rem;
+  cursor: pointer; transition: all 0.3s; font-family: 'Poppins';
+}
+.msg-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,215,0,0.4); }
+.msg-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.msg-card {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 16px; padding: 20px;
+  animation: fadeInUp 0.5s ease both;
+  position: relative; overflow: hidden;
+}
+.msg-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.msg-card:nth-child(6n+1)::before { background: var(--gradient-1); }
+.msg-card:nth-child(6n+2)::before { background: var(--gradient-2); }
+.msg-card:nth-child(6n+3)::before { background: var(--gradient-3); }
+.msg-card:nth-child(6n+4)::before { background: linear-gradient(135deg, #FF6B35, #FF4757); }
+.msg-card:nth-child(6n+5)::before { background: linear-gradient(135deg, #00C9FF, #6C3CE1); }
+.msg-card:nth-child(6n+6)::before { background: linear-gradient(135deg, #FFD700, #2ED573); }
+.msg-card-text { font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; font-style: italic; color: rgba(255,255,255,0.9); }
+.msg-card-author { font-size: 0.8rem; color: var(--gold); font-weight: 600; }
+.msg-card-emoji { font-size: 1.5rem; margin-bottom: 8px; display: block; }
+
+/* ===== CONFETTI BUTTON ===== */
+.confetti-btn {
+  position: fixed; bottom: 30px; right: 30px; z-index: 999;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--gradient-2); border: none;
+  font-size: 1.5rem; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255,215,0,0.4);
+  transition: transform 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== RATING SECTION ===== */
+.rating-container { max-width: 600px; margin: 0 auto; }
+.rating-card {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 32px; text-align: center;
+}
+.rating-stars {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 8px;
+}
+.star {
+  font-size: 2.5rem; cursor: pointer; color: rgba(255,255,255,0.2);
+  transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
+  user-select: none;
+}
+.star:hover { transform: scale(1.2); }
+.star.active {
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+.rating-label {
+  font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px;
+  min-height: 24px;
+}
+.rating-input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.rating-sent {
+  color: #2ED573; font-weight: 600;
+  animation: fadeInUp 0.5s ease;
+}
+
+.music-btn {
+  position: fixed; bottom: 100px; right: 30px; z-index: 999;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  font-size: 1.3rem; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(108,60,225,0.3);
+  transition: transform 0.3s, background 0.3s;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(10px);
+}
+.music-btn:hover { transform: scale(1.1); background: var(--bg-card-hover); }
+.music-btn.playing {
+  animation: pulse 1.5s ease-in-out infinite;
+  border-color: var(--gold);
+}
+
+.confetti-btn:hover { transform: scale(1.1) rotate(15deg); }
+.confetti-piece {
+  position: fixed; z-index: 9999; pointer-events: none;
+  width: 10px; height: 10px; border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotateZ(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
+
+/* ===== THANK YOU SECTION ===== */
+.thankyou {
+  text-align: center; padding: 80px 20px;
+  background: radial-gradient(ellipse at center, rgba(108,60,225,0.2), transparent 70%);
+}
+.thankyou-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 5vw, 4rem);
+  background: linear-gradient(90deg, var(--gold), #FFF, var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  margin-bottom: 16px;
+}
+.thankyou-sub { color: var(--text-muted); font-size: 1.1rem; }
+.thankyou-hearts { font-size: 2rem; margin-top: 16px; animation: heartBeat 1.5s infinite; }
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 60px 20px 30px;
+  background: rgba(0,0,0,0.3);
+}
+.footer-content {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+}
+.footer-brand .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 12px;
+  background: var(--gradient-2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.footer-brand p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+.footer-links h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; color: var(--gold); }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { color: var(--text-muted); font-size: 0.85rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  text-align: center; margin-top: 40px; padding-top: 20px;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-muted); font-size: 0.8rem;
+}
+.footer-bottom .heart { color: #FF4757; animation: heartBeat 1.5s infinite; display: inline-block; }
+
+/* ===== WAVES ===== */
+.wave-separator { width: 100%; overflow: hidden; line-height: 0; margin-top: -1px; }
+.wave-separator svg { display: block; width: 100%; height: 60px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(13,11,33,0.95); backdrop-filter: blur(20px);
+    padding: 20px; gap: 16px; border-bottom: 1px solid var(--glass-border);
+  }
+  .nav-toggle { display: block; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .timeline::before { left: 20px; }
+  .timeline-item { width: 100%; left: 0 !important; text-align: left !important; padding-left: 50px; }
+  .timeline-dot { left: 11px !important; right: auto !important; }
+  .footer-content { grid-template-columns: 1fr; }
+  .msg-input-row { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr; }
+  .teachers-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-brand">✨ Marvel Minds Academy</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#teachers">Teachers</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#memories">Memories</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#messages">Messages</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✨ September 5, 2026</div>
+    <h1 class="hero-school">Marvel Minds Academy</h1>
+    <h2 class="hero-title">
+      Happy <span class="highlight">Teachers' Day</span>
+    </h2>
+    <p class="hero-tagline">Celebrating the mentors who ignite minds, shape futures, and build the nation — one lesson at a time.</p>
+    <button class="hero-cta" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      🎉 Celebrate With Us
+    </button>
+  </div>
+  <div class="scroll-indicator">
+    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+  </div>
+</section>
+
+<!-- ===== ABOUT / STATS ===== -->
+<section class="section" id="about">
+  <div class="section-header reveal">
+    <div class="section-label">📌 Our School</div>
+    <h2 class="section-title">Marvel Minds Academy, Sarupathar</h2>
+    <p class="section-subtitle">Empowering young minds in Golaghat, Assam since 2016. English medium, co-educational, Grades 1–8.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="stats">
+    <div class="stat-card reveal">
+      <div class="stat-icon">👨‍🎓</div>
+      <div class="stat-number" data-count="105">0</div>
+      <div class="stat-label">Students</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">👩‍🏫</div>
+      <div class="stat-number" data-count="100" data-suffix="%">0</div>
+      <div class="stat-label">Permanent Teachers</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-number" data-count="0" data-suffix="%">0</div>
+      <div class="stat-label">Failure Rate</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">📍</div>
+      <div class="stat-number" data-count="2016">0</div>
+      <div class="stat-label">Year Established</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WAVE ===== -->
+<div class="wave-separator">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="rgba(108,60,225,0.15)" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"/>
+  </svg>
+</div>
+
+<!-- ===== TEACHERS ===== -->
+<section class="section" id="teachers">
+  <div class="section-header reveal">
+    <div class="section-label">👩‍🏫 Our Heroes</div>
+    <h2 class="section-title">Meet Our Amazing Teachers</h2>
+    <p class="section-subtitle">The pillars of knowledge and inspiration at Marvel Minds Academy. Hover over a card to learn more!</p>
+    <div class="divider"></div>
+  </div>
+  <div class="teachers-grid" id="teachersGrid">
+    <!-- Teachers populated by JS -->
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section" id="gallery">
+  <div class="section-header reveal">
+    <div class="section-label">📸 Memories</div>
+    <h2 class="section-title">Photo & Video Gallery</h2>
+    <p class="section-subtitle">Moments captured at Marvel Minds Academy — celebrations, workshops, and more.</p>
+    <div class="divider"></div>
+    <p style="margin-top:20px; font-size:0.8rem; color:var(--text-muted); font-style:italic; max-width:500px; margin-left:auto; margin-right:auto;">📝 Note: Due to limited photo availability, the web owner does not have photos of all the festivals and celebrations that happened in the school. The photos shown here are the ones available.</p>
+  </div>
+  <div class="gallery-filter reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="celebrations">Celebrations</button>
+    <button class="filter-btn" data-filter="classroom">Classroom</button>
+    <button class="filter-btn" data-filter="activities">Activities</button>
+    <button class="filter-btn" data-filter="teachers-day">Teachers' Day</button>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Gallery items populated by JS -->
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</button>
+</div>
+
+<!-- ===== TIMELINE ===== -->
+<section class="section" id="memories">
+  <div class="section-header reveal">
+    <div class="section-label">🗓️ Our Journey</div>
+    <h2 class="section-title">Memories & Milestones</h2>
+    <p class="section-subtitle">A journey of learning, laughter, and love at Marvel Minds Academy.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="timeline" id="timeline">
+    <!-- Timeline items populated by JS -->
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="section" id="quiz">
+  <div class="section-header reveal">
+    <div class="section-label">🧩 Fun Time</div>
+    <h2 class="section-title">Guess the Teacher!</h2>
+    <p class="section-subtitle">Think you know your teachers well? Test your knowledge with this fun quiz!</p>
+    <div class="divider"></div>
+  </div>
+  <div class="quiz-container reveal">
+    <div class="quiz-inner" id="quizInner">
+      <!-- Quiz populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== MESSAGE BOARD ===== -->
+<section class="section" id="messages">
+  <div class="section-header reveal">
+    <div class="section-label">💬 From Students</div>
+    <h2 class="section-title">Thank You Messages</h2>
+    <p class="section-subtitle">Leave a heartfelt message for our beloved teachers.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="msg-board">
+    <div class="msg-form reveal">
+      <h3>✍️ Write Your Message</h3>
+      <div class="msg-input-row">
+        <input class="msg-input" id="msgName" placeholder="Your Name" maxlength="50">
+        <input class="msg-input" id="msgClass" placeholder="Your Class (e.g. Class 5)" maxlength="30">
+      </div>
+      <textarea class="msg-input" id="msgText" placeholder="Write your thank-you message here..." maxlength="300"></textarea>
+      <div style="margin-top:16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <button class="msg-submit" onclick="addMessage()">💌 Send Message</button>
+        <span id="msgCount" style="font-size:0.8rem; color:var(--text-muted);"></span>
+      </div>
+    </div>
+    <div class="msg-wall" id="msgWall">
+      <!-- Messages populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== RATING SECTION ===== -->
+<section class="section" id="rating">
+  <div class="section-header reveal">
+    <div class="section-label">⭐ Rate Us</div>
+    <h2 class="section-title">How Was Your Experience?</h2>
+    <p class="section-subtitle">Share your rating and a message — your feedback means the world to us!</p>
+    <div class="divider"></div>
+  </div>
+  <div class="rating-container reveal">
+    <div class="rating-card">
+      <div class="rating-stars" id="ratingStars">
+        <span class="star" data-value="1">☆</span>
+        <span class="star" data-value="2">☆</span>
+        <span class="star" data-value="3">☆</span>
+        <span class="star" data-value="4">☆</span>
+        <span class="star" data-value="5">☆</span>
+      </div>
+      <div class="rating-label" id="ratingLabel">Select your rating</div>
+      <div class="rating-input-row">
+        <input class="msg-input" id="ratingName" placeholder="Your Name" maxlength="50">
+        <input class="msg-input" id="ratingRole" placeholder="Student / Parent / Teacher" maxlength="30">
+      </div>
+      <textarea class="msg-input" id="ratingComment" placeholder="Write your feedback here..." maxlength="500"></textarea>
+      <div style="margin-top:16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <button class="msg-submit" onclick="submitRating()">⭐ Submit Rating</button>
+        <span id="ratingStatus" style="font-size:0.8rem; color:var(--text-muted);"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THANK YOU ===== -->
+<section class="thankyou">
+  <div class="reveal">
+    <div class="thankyou-text">Thank You, Teachers!</div>
+    <p class="thankyou-sub">For planting seeds of knowledge that will bloom forever.<br>From all of us at Marvel Minds Academy 💛</p>
+    <div class="thankyou-hearts">🎓❤️📚✨🌟</div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">✨ Marvel Minds Academy</div>
+      <p>Empowering young minds since 2016. Located in the heart of Sarupathar, Golaghat, Assam. English medium, co-educational school nurturing students from Grades 1–8.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#teachers">Our Teachers</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#memories">Memories</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📍 Sarupathar, Golaghat, Assam</a></li>
+        <li><a href="#">📮 PIN: 785601</a></li>
+        <li><a href="https://www.facebook.com/marvelmindsacademy/" target="_blank">📘 Facebook</a></li>
+        <li><a href="https://www.instagram.com/explore/locations/1592846444347760/marvel-minds-academy/" target="_blank">📷 Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Made with <span class="heart">❤️</span> for Marvel Minds Academy · Teachers' Day 2026</p>
+    <p style="margin-top:8px; font-size:0.85rem; color:var(--gold);">Made by <strong>Abhigyan Nath</strong> · Class 8</p>
+  </div>
+</footer>
+
+<!-- ===== MUSIC PLAYER ===== -->
+<audio id="bgMusic" loop preload="auto" autoplay>
+  <source src="aashayein.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn playing" id="musicBtn" onclick="toggleMusic()" title="Play/Pause Music">🎵</button>
+
+<!-- ===== CONFETTI BUTTON ===== -->
+<button class="confetti-btn" onclick="fireConfetti()" title="Celebrate! 🎉">🎉</button>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// ===== DATA (Placeholders — update with real data) =====
+const teachersData = [
+  { name: "Founder & Principal", role: "Founder & Principal", subject: "Administration", avatar: "FP", color: "linear-gradient(135deg, #FFD700, #FF6B35)", photo: "https://i.ibb.co/qMf31N47/IMG-20260830-093145525-HDR.jpg", quote: "Education is the most powerful weapon which you can use to change the world.", funFact: "🌟 The heart and soul of Marvel Minds Academy" },
+  { name: "Amit Paban Borthakur", role: "MD / Management", subject: "Management", avatar: "AB", color: "linear-gradient(135deg, #6C3CE1, #E040FB)", photo: "https://i.ibb.co/3YmPcdZ5/IMG-20260830-093017568-HDR-PCT.jpg", quote: "Leadership is the art of giving people a platform for spreading ideas that work.", funFact: "💼 The driving force behind Marvel Minds Academy" },
+  { name: "Anamika Medhi", role: "Head Teacher", subject: "Mathematics", avatar: "AM", color: "linear-gradient(135deg, #FF6B35, #FF4757)", photo: "https://i.ibb.co/d4HghYSN/IMG-20260830-092959020-HDR-PCT.jpg", quote: "A great teacher takes a hand, opens a mind, and touches a heart.", funFact: "🔢 Makes numbers come alive for every student" },
+  { name: "Babpa Sir", role: "Senior Teacher", subject: "Science & Computer", avatar: "BS", color: "linear-gradient(135deg, #00C9FF, #92FE9D)", photo: "", quote: "Science is the great antidote to the poison of enthusiasm and superstition.", funFact: "🔬 Makes science come alive with experiments" },
+  { name: "Krity Mam", role: "Senior Teacher", subject: "English Grammar / English / Social", avatar: "KM", color: "linear-gradient(135deg, #FFD700, #FF6B35)", photo: "https://i.ibb.co/7tGG6SXn/IMG-20260830-092906457-HDR-PCT.jpg", quote: "A word after a word after a word is power.", funFact: "📖 Inspires students through literature and stories" },
+  { name: "Dilip Dhar Sir", role: "Teacher", subject: "Social & English", avatar: "DD", color: "linear-gradient(135deg, #E040FB, #6C3CE1)", photo: "https://i.ibb.co/tPcsxtYS/IMG-20260830-093041398-HDR-PCT.jpg", quote: "The past is a foreign country; they do things differently there.", funFact: "🗺️ Brings history and society to life" },
+  { name: "Mousumi Deb Mam", role: "Teacher", subject: "Hindi", avatar: "MD", color: "linear-gradient(135deg, #2ED573, #00C9FF)", photo: "", quote: "Language is the road map of a culture.", funFact: "🇮🇳 Makes Hindi learning fun and engaging" },
+  { name: "Shubham Sir", role: "Ex Teacher", subject: "Former Faculty", avatar: "SS", color: "linear-gradient(135deg, #B8B5D0, #6C3CE1)", photo: "https://i.ibb.co/ksgQHGHr/IMG-20260830-093029210-HDR-PCT.jpg", quote: "The influence of a good teacher can never be erased.", funFact: "🌟 A valued part of MMA's journey" },
+  { name: "Shobha Mam", role: "Ex Teacher", subject: "Former Faculty", avatar: "SM", color: "linear-gradient(135deg, #FFB347, #FF6B35)", photo: "https://i.ibb.co/R4GVmbML/IMG-20260830-093048621-HDR-PCT.jpg", quote: "Teaching is the greatest act of optimism.", funFact: "💖 Left a lasting legacy at MMA" },
+  { name: "Konika Mam", role: "Ex Teacher", subject: "Former Faculty", avatar: "KM", color: "linear-gradient(135deg, #FF4757, #FFD700)", photo: "https://i.ibb.co/kCjb3kh/IMG-20260830-095007740-HDR-PCT.jpg", quote: "Education is not preparation for life; education is life itself.", funFact: "🏫 Cherished memories at Marvel Minds Academy" },
+];
+
+const galleryData = [
+  { title: "Independence Day 2025", category: "celebrations", emoji: "🇮🇳", desc: "Independence Day celebration at Marvel Minds Academy", image: "https://i.ibb.co/dshP1D3v/IMG-20260815-WA0006.jpg" },
+  { title: "Teachers' Day 2024", category: "teachers-day", emoji: "👩‍🏫", desc: "Teachers' Day celebration honoring our beloved teachers", image: "https://i.ibb.co/RpMtBkG1/adasdaas.png" },
+];
+
+const timelineData = [
+  { date: "2016", title: "School Founded", emoji: "🏫", desc: "Marvel Minds Academy was established in Sarupathar by Dharitri Konwar and Riya Richa Mech with a vision for quality education." },
+  { date: "2018", title: "First Batch Graduates", emoji: "🎓", desc: "Our first batch of students completed their primary education, setting a benchmark for academic excellence." },
+  { date: "2020", title: "Digital Learning Initiative", emoji: "💻", desc: "Introduced WiFi-enabled learning and embraced digital classrooms for an enhanced educational experience." },
+  { date: "2022", title: "100 Students Milestone", emoji: "💯", desc: "Crossed the 100-student mark — a testament to the trust parents place in our school." },
+  { date: "2023", title: "Activity Workshop Series", emoji: "🔬", desc: "Launched comprehensive activity workshops covering science, arts, and cultural education." },
+  { date: "2024", title: "NERITS Merit Recognition", emoji: "🏆", desc: "Students achieved remarkable results in NERITS Summer Merit Tests, bringing pride to the school." },
+  { date: "2025", title: "105 Students Strong", emoji: "📈", desc: "Continued growth with 105 students, 100% permanent teachers, and a 0% failure rate!" },
+  { date: "2026", title: "Teachers' Day Celebration", emoji: "🎉", desc: "A grand celebration honoring our incredible teachers who make Marvel Minds Academy shine!" },
+];
+
+const quizData = [
+  { question: "Who is the Head Teacher at Marvel Minds Academy?", options: ["Krity Mam", "Anamika Medhi", "Mousumi Deb Mam", "Shobha Mam"], correct: 1 },
+  { question: "Which teacher teaches Mathematics at MMA?", options: ["Babpa Sir", "Dilip Dhar Sir", "Anamika Medhi", "Krity Mam"], correct: 2 },
+  { question: "Who is the MD/Management head of MMA?", options: ["Shubham Sir", "Amit Paban Borthakur", "Dilip Dhar Sir", "Babpa Sir"], correct: 1 },
+  { question: "Which subjects does Babpa Sir teach?", options: ["English & Social", "Hindi & Assamese", "Science & Computer", "Mathematics & Science"], correct: 2 },
+  { question: "Who teaches Hindi at Marvel Minds Academy?", options: ["Konika Mam", "Shobha Mam", "Krity Mam", "Mousumi Deb Mam"], correct: 3 },
+  { question: "Which Senior Teacher handles English Grammar, English & Social?", options: ["Anamika Medhi", "Krity Mam", "Dilip Dhar Sir", "Mousumi Deb Mam"], correct: 1 },
+  { question: "Who teaches Social Studies & English at MMA?", options: ["Babpa Sir", "Dilip Dhar Sir", "Shubham Sir", "Amit Borthakur"], correct: 1 },
+  { question: "How many Ex Teachers are honored on the website?", options: ["1", "2", "3", "4"], correct: 2 },
+  { question: "What is the school's failure rate?", options: ["5%", "2%", "1%", "0%"], correct: 3 },
+  { question: "In which year was Marvel Minds Academy founded?", options: ["2014", "2015", "2016", "2017"], correct: 2 },
+];
+
+const defaultMessages = [
+  { name: "Ananya B.", class: "Class 7", text: "Thank you for making every lesson an adventure! 🌟", emoji: "📚" },
+  { name: "Rahul D.", class: "Class 5", text: "You don't just teach subjects, you teach us how to dream! ✨", emoji: "💫" },
+  { name: "Priyanka K.", class: "Class 8", text: "The best school, the best teachers. Proud to be an MMA student! 💪", emoji: "🏆" },
+  { name: "Arjun G.", class: "Class 3", text: "Thank you for your patience and love. You make school fun! 🎈", emoji: "😊" },
+  { name: "Nandini M.", class: "Class 6", text: "Every teacher at MMA is a hero in our eyes! 🦸‍♀️", emoji: "❤️" },
+  { name: "Deepak S.", class: "Class 4", text: "You believed in me when I didn't believe in myself. Thank you! 🙏", emoji: "🌟" },
+  { name: "Moumita B.", class: "Class 7", text: "MMA isn't just a school, it's a family. Happy Teachers' Day! 🏠", emoji: "💛" },
+  { name: "Akash T.", class: "Class 2", text: "You make learning feel like magic! ✨ Thank you, teachers!", emoji: "🪄" },
+];
+
+// ===== PARTICLES =====
+function createParticles() {
+  const container = document.getElementById('particles');
+  const emojis = ['📚', '✏️', '🎓', '⭐', '📖', '🌟', '💡', '🎒', '📝', '🎉', '❤️', '🏫'];
+  for (let i = 0; i < 35; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = Math.random() * 10 + 's';
+    p.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+    container.appendChild(p);
+  }
+}
+createParticles();
+
+// ===== NAVBAR SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+// ===== ANIMATED COUNTERS =====
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 60));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = current.toLocaleString() + suffix;
+      }, 25);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+// ===== TEACHERS =====
+function renderTeachers() {
+  const grid = document.getElementById('teachersGrid');
+  grid.innerHTML = teachersData.map((t, i) => `
+    <div class="teacher-card reveal" style="animation-delay:${i * 0.1}s">
+      <div class="teacher-card-inner">
+        <div class="teacher-front">
+          ${t.photo ? `<img src="${t.photo}" alt="${t.name}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin-bottom:16px;">` : `<div class="teacher-avatar" style="background:${t.color}">${t.avatar}</div>`}
+          <div class="teacher-name">${t.name}</div>
+          <div class="teacher-role">${t.role}</div>
+          <div class="teacher-subject">${t.subject}</div>
+        </div>
+        <div class="teacher-back">
+          <div class="teacher-quote">${t.quote}</div>
+          <div class="teacher-fun-fact">${t.funFact}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  // Re-observe new reveal elements
+  grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+renderTeachers();
+
+// ===== GALLERY =====
+let currentGalleryFilter = 'all';
+let filteredGallery = [...galleryData];
+let lightboxIndex = 0;
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  filteredGallery = currentGalleryFilter === 'all'
+    ? [...galleryData]
+    : galleryData.filter(g => g.category === currentGalleryFilter);
+  grid.innerHTML = filteredGallery.map((g, i) => `
+    <div class="gallery-item reveal" data-index="${i}" onclick="openLightbox(${i})" style="animation-delay:${i*0.05}s">
+      ${g.image ? `<img src="${g.image}" alt="${g.title}" loading="lazy">` : `<div class="gallery-placeholder"><span class="icon">${g.emoji}</span><span>${g.title}</span><span style="font-size:0.75rem; opacity:0.6">📷 Photo coming soon</span></div>`}
+      <div class="gallery-overlay">
+        <span class="gallery-overlay-text">${g.title}</span>
+      </div>
+    </div>
+  `).join('');
+  grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+renderGallery();
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentGalleryFilter = btn.dataset.filter;
+    renderGallery();
+  });
+});
+
+function openLightbox(index) {
+  lightboxIndex = index;
+  const g = filteredGallery[index];
+  document.getElementById('lightboxContent').innerHTML = g.image
+    ? `<img src="${g.image}" alt="${g.title}" style="max-width:90vw; max-height:70vh; border-radius:16px; object-fit:contain;">`
+    : `<div style="background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; padding:60px; text-align:center; min-width:300px;"><div style="font-size:5rem; margin-bottom:16px;">${g.emoji}</div><div style="font-size:1.3rem; font-weight:600;">${g.title}</div><div style="color:var(--text-muted); margin-top:8px;">${g.desc}</div></div>`;
+  document.getElementById('lightboxCaption').textContent = `${index + 1} / ${filteredGallery.length}`;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function navigateLightbox(dir) {
+  lightboxIndex = (lightboxIndex + dir + filteredGallery.length) % filteredGallery.length;
+  openLightbox(lightboxIndex);
+}
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigateLightbox(-1);
+  if (e.key === 'ArrowRight') navigateLightbox(1);
+});
+
+// ===== TIMELINE =====
+function renderTimeline() {
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = timelineData.map((t, i) => `
+    <div class="timeline-item ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-emoji">${t.emoji}</div>
+        <div class="timeline-date">${t.date}</div>
+        <div class="timeline-title">${t.title}</div>
+        <div class="timeline-desc">${t.desc}</div>
+      </div>
+    </div>
+  `).join('');
+  tl.querySelectorAll('.reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+}
+renderTimeline();
+
+// ===== QUIZ =====
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function renderQuiz() {
+  const inner = document.getElementById('quizInner');
+  if (quizIndex >= quizData.length) {
+    const emoji = quizScore === quizData.length ? '🏆' : quizScore >= quizData.length * 0.7 ? '🌟' : quizScore >= quizData.length * 0.4 ? '👍' : '💪';
+    const msg = quizScore === quizData.length ? 'Perfect Score! You really know your school!' : quizScore >= quizData.length * 0.7 ? 'Amazing! You\'re a true MMA student!' : quizScore >= quizData.length * 0.4 ? 'Good job! Keep learning about your school!' : 'Nice try! Explore more about your school!';
+    inner.innerHTML = `
+      <div class="quiz-result">
+        <div class="quiz-result-emoji">${emoji}</div>
+        <div class="quiz-result-score">${quizScore}/${quizData.length}</div>
+        <div class="quiz-result-msg">${msg}</div>
+        <button class="quiz-btn" onclick="restartQuiz()" style="margin-top:20px;">🔄 Play Again</button>
+      </div>
+    `;
+    if (quizScore >= quizData.length * 0.7) fireConfetti();
+    return;
+  }
+  const q = quizData[quizIndex];
+  quizAnswered = false;
+  inner.innerHTML = `
+    <div class="quiz-progress"><div class="quiz-progress-bar" style="width:${(quizIndex / quizData.length) * 100}%"></div></div>
+    <div class="quiz-question-num">QUESTION ${quizIndex + 1} OF ${quizData.length}</div>
+    <div class="quiz-question">${q.question}</div>
+    <div class="quiz-options">
+      ${q.options.map((opt, i) => `
+        <div class="quiz-option" data-index="${i}" onclick="selectAnswer(${i})">
+          <span class="quiz-option-letter">${String.fromCharCode(65 + i)}</span>
+          <span>${opt}</span>
+        </div>
+      `).join('')}
+    </div>
+    <button class="quiz-btn" id="quizNext" onclick="nextQuestion()" disabled>Next →</button>
+  `;
+}
+
+function selectAnswer(index) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  const q = quizData[quizIndex];
+  const options = document.querySelectorAll('.quiz-option');
+  options.forEach((opt, i) => {
+    if (i === q.correct) opt.classList.add('correct');
+    if (i === index && i !== q.correct) opt.classList.add('wrong');
+    opt.style.pointerEvents = 'none';
+  });
+  if (index === q.correct) quizScore++;
+  document.getElementById('quizNext').disabled = false;
+}
+function nextQuestion() { quizIndex++; renderQuiz(); }
+function restartQuiz() { quizIndex = 0; quizScore = 0; renderQuiz(); }
+renderQuiz();
+
+// ===== RATING SYSTEM =====
+let selectedRating = 0;
+const ratingLabels = ['', '⭐ Poor', '⭐⭐ Fair', '⭐⭐⭐ Good', '⭐⭐⭐⭐ Very Good', '⭐⭐⭐⭐⭐ Excellent'];
+// TODO: Replace with your Discord webhook URL
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1543483293876355112/7-D_Wm3RERtlvkzXIoU4OjVFpZov-Vqo3h0k9io26A7tj3VkiFmyHfh1kcIXtjg1l4FN';
+
+// ===== MUSIC PLAYER =====
+let musicPlaying = true;
+const bgAudio = document.getElementById('bgMusic');
+bgAudio.volume = 0.3;
+bgAudio.play().catch(() => {
+  // Autoplay blocked — wait for first user interaction
+  document.addEventListener('click', function autoPlay() {
+    bgAudio.volume = 0.3;
+    bgAudio.play().catch(() => {});
+    document.removeEventListener('click', autoPlay);
+  }, { once: true });
+});
+function toggleMusic() {
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+  if (musicPlaying) {
+    audio.pause();
+    btn.textContent = '🔇';
+    btn.classList.remove('playing');
+  } else {
+    audio.volume = 0.3;
+    audio.play().catch(() => {});
+    btn.textContent = '🎵';
+    btn.classList.add('playing');
+  }
+  musicPlaying = !musicPlaying;
+}
+
+function initRatingStars() {
+  const stars = document.querySelectorAll('#ratingStars .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.dataset.value);
+      updateStars();
+    });
+    star.addEventListener('mouseenter', () => {
+      const val = parseInt(star.dataset.value);
+      stars.forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.value) <= val);
+        s.textContent = parseInt(s.dataset.value) <= val ? '★' : '☆';
+      });
+    });
+  });
+  document.getElementById('ratingStars').addEventListener('mouseleave', updateStars);
+}
+
+function updateStars() {
+  const stars = document.querySelectorAll('#ratingStars .star');
+  stars.forEach(s => {
+    const val = parseInt(s.dataset.value);
+    s.classList.toggle('active', val <= selectedRating);
+    s.textContent = val <= selectedRating ? '★' : '☆';
+  });
+  document.getElementById('ratingLabel').textContent = selectedRating ? ratingLabels[selectedRating] : 'Select your rating';
+}
+
+async function submitRating() {
+  const name = document.getElementById('ratingName').value.trim();
+  const role = document.getElementById('ratingRole').value.trim();
+  const comment = document.getElementById('ratingComment').value.trim();
+  if (!selectedRating) return alert('Please select a star rating!');
+  if (!name) return alert('Please enter your name!');
+  if (!comment) return alert('Please write a comment!');
+
+  if (!DISCORD_WEBHOOK_URL) {
+    document.getElementById('ratingStatus').innerHTML = '<span class="rating-sent">✅ Rating saved! (Webhook not configured yet — contact the web owner to set up Discord notifications)</span>';
+    fireConfetti();
+    return;
+  }
+
+  const embed = {
+    title: '⭐ New Rating for Marvel Minds Academy',
+    color: selectedRating >= 4 ? 0x2ED573 : selectedRating >= 3 ? 0xFFD700 : 0xFF4757,
+    fields: [
+      { name: '⭐ Rating', value: `${'★'.repeat(selectedRating)}${'☆'.repeat(5 - selectedRating)} (${selectedRating}/5)`, inline: true },
+      { name: '👤 Name', value: name, inline: true },
+      { name: '🏷️ Role', value: role || 'Not specified', inline: true },
+      { name: '💬 Comment', value: comment, inline: false },
+    ],
+    footer: { text: 'Marvel Minds Academy — Teachers Day 2026' },
+    timestamp: new Date().toISOString(),
+  };
+
+  try {
+    const statusEl = document.getElementById('ratingStatus');
+    statusEl.textContent = '⏳ Sending...';
+    await fetch(DISCORD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ embeds: [embed] }),
+    });
+    statusEl.innerHTML = '<span class="rating-sent">✅ Rating sent successfully! Thank you! 🎉</span>';
+    fireConfetti();
+    document.getElementById('ratingName').value = '';
+    document.getElementById('ratingRole').value = '';
+    document.getElementById('ratingComment').value = '';
+    selectedRating = 0;
+    updateStars();
+  } catch (err) {
+    document.getElementById('ratingStatus').innerHTML = '<span style="color:#FF4757;">❌ Failed to send. Please try again.</span>';
+  }
+}
+initRatingStars();
+
+// ===== MESSAGE BOARD =====
+function loadMessages() {
+  const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null') || defaultMessages;
+  renderMessages(stored);
+}
+function addMessage() {
+  const name = document.getElementById('msgName').value.trim();
+  const cls = document.getElementById('msgClass').value.trim();
+  const text = document.getElementById('msgText').value.trim();
+  if (!name || !text) return alert('Please enter your name and message!');
+  const emojis = ['💌', '💝', '🌸', '✨', '🎓', '💫', '🌟', '❤️'];
+  const msg = { name, class: cls || 'Student', text, emoji: emojis[Math.floor(Math.random() * emojis.length)] };
+  const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null') || defaultMessages;
+  stored.unshift(msg);
+  localStorage.setItem('mma_messages', JSON.stringify(stored));
+  renderMessages(stored);
+  document.getElementById('msgName').value = '';
+  document.getElementById('msgClass').value = '';
+  document.getElementById('msgText').value = '';
+  fireConfetti();
+}
+function renderMessages(msgs) {
+  const wall = document.getElementById('msgWall');
+  wall.innerHTML = msgs.map(m => `
+    <div class="msg-card">
+      <span class="msg-card-emoji">${m.emoji || '💌'}</span>
+      <div class="msg-card-text">"${m.text}"</div>
+      <div class="msg-card-author">— ${m.name} · ${m.class}</div>
+    </div>
+  `).join('');
+  document.getElementById('msgCount').textContent = `${msgs.length} messages sent with 💛`;
+}
+loadMessages();
+
+// ===== CONFETTI =====
+function fireConfetti() {
+  const colors = ['#FFD700', '#6C3CE1', '#E040FB', '#00C9FF', '#FF6B35', '#2ED573', '#FF4757', '#FFF'];
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.top = '-10px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.width = (6 + Math.random() * 10) + 'px';
+    piece.style.height = (6 + Math.random() * 10) + 'px';
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    piece.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+    piece.style.animationDelay = Math.random() * 0.5 + 's';
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 4000);
+  }
+}
+
+// ===== KEYBOARD SHORTCUT =====
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelector('.nav-links').classList.remove('open');
+});
+</script>
+</body>
+</html>
