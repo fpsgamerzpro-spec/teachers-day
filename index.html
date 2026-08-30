@@ -908,14 +908,14 @@ const quizData = [
 ];
 
 const defaultMessages = [
-  { name: "Ananya B.", class: "Class 7", text: "Thank you for making every lesson an adventure! 🌟", emoji: "📚" },
-  { name: "Rahul D.", class: "Class 5", text: "You don't just teach subjects, you teach us how to dream! ✨", emoji: "💫" },
-  { name: "Priyanka K.", class: "Class 8", text: "The best school, the best teachers. Proud to be an MMA student! 💪", emoji: "🏆" },
-  { name: "Arjun G.", class: "Class 3", text: "Thank you for your patience and love. You make school fun! 🎈", emoji: "😊" },
-  { name: "Nandini M.", class: "Class 6", text: "Every teacher at MMA is a hero in our eyes! 🦸‍♀️", emoji: "❤️" },
-  { name: "Deepak S.", class: "Class 4", text: "You believed in me when I didn't believe in myself. Thank you! 🙏", emoji: "🌟" },
-  { name: "Moumita B.", class: "Class 7", text: "MMA isn't just a school, it's a family. Happy Teachers' Day! 🏠", emoji: "💛" },
-  { name: "Akash T.", class: "Class 2", text: "You make learning feel like magic! ✨ Thank you, teachers!", emoji: "🪄" },
+  { name: "Binoy", class: "Class 8", text: "Excellent system of education. I like this school very much. Thank you to all teachers for making us smarter 🙏", emoji: "⭐" },
+  { name: "Bishal Chetri", class: "Class 6", text: "This is the best school in Sarupathar. Teachers are very kind and they always help us when we are in problem.", emoji: "📚" },
+  { name: "Priyanka Deka", class: "Class 9", text: "My daughter is studying here from 2 years and I am very happy with the result. Teachers really care about students 💛", emoji: "🌟" },
+  { name: "Aaryan Ahmed", class: "Class 7", text: "MMA is like a second home for me. I learned so many things here and my favourite is science class with Babpa Sir 🔬", emoji: "🎒" },
+  { name: "Sumi Buragohain", class: "Class 10", text: "Thank you Marvel Minds Academy for gving me such good education. Without you I could not have came this far. Salute to all teachers! 🫡", emoji: "🎓" },
+  { name: "Sima Chanda", class: "Class 5", text: "I realy like this school. The teachers are so nice and they make class fun. Happy teachers day to every teacher at MMA! 🎉", emoji: "❤️" },
+  { name: "Monalisha Saikia", class: "Class 8", text: "Best school in the area no doubt. All the teacher are very experianced and teaches with so much patince. Thank you MMA 🙏", emoji: "✨" },
+  { name: "Kaushik Saikia", class: "Class 4", text: "My son realy enjoy going to school everyday. He always say teacher are very good and he love to study here. Very good school 👍", emoji: "💛" },
 ];
 
 // ===== PARTICLES =====
@@ -1239,8 +1239,9 @@ initRatingStars();
 
 // ===== MESSAGE BOARD =====
 function loadMessages() {
-  const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null') || defaultMessages;
-  renderMessages(stored);
+  // Force reset to real Google Maps reviews on each visit
+  localStorage.removeItem('mma_messages');
+  renderMessages(defaultMessages);
 }
 function addMessage() {
   const name = document.getElementById('msgName').value.trim();
