@@ -608,6 +608,11 @@ textarea.msg-input { resize: vertical; min-height: 100px; }
   .gallery-grid { grid-template-columns: 1fr; }
 }
 </style>
+
+<!-- Firebase SDK for cross-device message storage -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 </head>
 <body>
 
@@ -1240,13 +1245,61 @@ initRatingStars();
 // ===== MESSAGE BOARD =====
 const MSG_DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1543483293876355112/7-D_Wm3RERtlvkzXIoU4OjVFpZov-Vqo3h0k9io26A7tj3VkiFmyHfh1kcIXtjg1l4FN';
 
-function loadMessages() {
+// ===== FIREBASE CONFIG =====
+// Replace these values with your own Firebase config (see setup instructions below)
+const firebaseConfig = {
+  apiKey: "AIzaSyCYz31AZJiwEr6tHwVcRtJvFH12Vt1uiYk",
+  authDomain: "teachers-day-7947e.firebaseapp.com",
+  databaseURL: "https://teachers-day-7947e-default-rtdb.firebaseio.com",
+  projectId: "teachers-day-7947e",
+  storageBucket: "teachers-day-7947e.firebasestorage.app",
+  messagingSenderId: "549799553862",
+  appId: "1:549799553862:web:7b0cf5f6804e1012aa5347"
+};
+
+let firebaseReady = false;
+try {
+  firebase.initializeApp(firebaseConfig);
+  firebase.auth().signInAnonymously().then(() => {
+    firebaseReady = true;
+    console.log('🔥 Firebase connected — messages sync across all devices!');
+    // Listen for real-time message updates from Firebase
+    firebase.database().ref('messages').orderByChild('timestamp').on('value', (snap) => {
+      const val = snap.val();
+      const msgs = val ? Object.keys(val).map(k => val[k]).reverse() : [];
+      if (msgs.length > 0) {
+        renderMessages(msgs);
+      } else {
+        // No messages in Firebase yet — seed with defaults
+        seedDefaultMessages();
+      }
+    });
+  }).catch(() => {
+    console.log('Firebase auth failed — falling back to localStorage');
+    loadMessagesFallback();
+  });
+} catch(e) {
+  console.log('Firebase not configured — using localStorage fallback');
+  loadMessagesFallback();
+}
+
+function seedDefaultMessages() {
+  defaultMessages.forEach((msg, i) => {
+    const { class: cls, ...rest } = msg;
+    firebase.database().ref('messages').push({
+      ...rest,
+      cls: cls || 'Student',
+      timestamp: Date.now() - (defaultMessages.length - i) * 1000
+    });
+  });
+}
+
+function loadMessagesFallback() {
+  // localStorage fallback if Firebase is not configured
   const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null');
   if (stored && stored.length > 0) {
-    // User already has messages saved — load them
     renderMessages(stored);
   } else {
-    // First visit — seed with default Google Maps reviews and save
     localStorage.setItem('mma_messages', JSON.stringify(defaultMessages));
     renderMessages(defaultMessages);
   }
@@ -1258,14 +1311,19 @@ function addMessage() {
   const text = document.getElementById('msgText').value.trim();
   if (!name || !text) return alert('Please enter your name and message!');
   const emojis = ['💌', '💝', '🌸', '✨', '🎓', '💫', '🌟', '❤️'];
-  const msg = { name, class: cls || 'Student', text, emoji: emojis[Math.floor(Math.random() * emojis.length)] };
-  // Load existing messages from localStorage
-  const stored = JSON.parse(localStorage.getItem('mma_messages') || '[]');
-  stored.unshift(msg);
-  // Save to localStorage (persists across refresh)
-  localStorage.setItem('mma_messages', JSON.stringify(stored));
-  renderMessages(stored);
-  // Also send to Discord as backup (persists forever)
+  const msg = { name, cls: cls || 'Student', text, emoji: emojis[Math.floor(Math.random() * emojis.length)], timestamp: Date.now() };
+  
+  if (firebaseReady) {
+    // Save to Firebase (visible to ALL devices instantly)
+    firebase.database().ref('messages').push(msg);
+  } else {
+    // Fallback to localStorage
+    const stored = JSON.parse(localStorage.getItem('mma_messages') || '[]');
+    stored.unshift(msg);
+    localStorage.setItem('mma_messages', JSON.stringify(stored));
+    renderMessages(stored);
+  }
+  // Also send to Discord as backup
   sendMessageToDiscord(msg);
   document.getElementById('msgName').value = '';
   document.getElementById('msgClass').value = '';
@@ -1299,12 +1357,11 @@ function renderMessages(msgs) {
     <div class="msg-card">
       <span class="msg-card-emoji">${m.emoji || '💌'}</span>
       <div class="msg-card-text">"${m.text}"</div>
-      <div class="msg-card-author">— ${m.name} · ${m.class}</div>
+      <div class="msg-card-author">— ${m.name} · ${m.cls || m.class || 'Student'}</div>
     </div>
   `).join('');
   document.getElementById('msgCount').textContent = `${msgs.length} messages sent with 💛`;
 }
-loadMessages();
 
 // ===== CONFETTI =====
 function fireConfetti() {
