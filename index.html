@@ -866,7 +866,7 @@ textarea.msg-input { resize: vertical; min-height: 100px; }
 <script>
 // ===== DATA (Placeholders — update with real data) =====
 const teachersData = [
-  { name: "Founder & Principal", role: "Founder & Principal", subject: "Administration", avatar: "FP", color: "linear-gradient(135deg, #FFD700, #FF6B35)", photo: "https://i.ibb.co/qMf31N47/IMG-20260830-093145525-HDR.jpg", quote: "Education is the most powerful weapon which you can use to change the world.", funFact: "🌟 The heart and soul of Marvel Minds Academy" },
+  { name: "Manik Borthakur", role: "Founder & Principal", subject: "Administration", avatar: "MB", color: "linear-gradient(135deg, #FFD700, #FF6B35)", photo: "https://i.ibb.co/qMf31N47/IMG-20260830-093145525-HDR.jpg", quote: "Education is the most powerful weapon which you can use to change the world.", funFact: "🌟 The heart and soul of Marvel Minds Academy" },
   { name: "Amit Paban Borthakur", role: "MD / Management", subject: "Management", avatar: "AB", color: "linear-gradient(135deg, #6C3CE1, #E040FB)", photo: "https://i.ibb.co/3YmPcdZ5/IMG-20260830-093017568-HDR-PCT.jpg", quote: "Leadership is the art of giving people a platform for spreading ideas that work.", funFact: "💼 The driving force behind Marvel Minds Academy" },
   { name: "Anamika Medhi", role: "Head Teacher", subject: "Mathematics", avatar: "AM", color: "linear-gradient(135deg, #FF6B35, #FF4757)", photo: "https://i.ibb.co/d4HghYSN/IMG-20260830-092959020-HDR-PCT.jpg", quote: "A great teacher takes a hand, opens a mind, and touches a heart.", funFact: "🔢 Makes numbers come alive for every student" },
   { name: "Babpa Sir", role: "Senior Teacher", subject: "Science & Computer", avatar: "BS", color: "linear-gradient(135deg, #00C9FF, #92FE9D)", photo: "", quote: "Science is the great antidote to the poison of enthusiasm and superstition.", funFact: "🔬 Makes science come alive with experiments" },
@@ -1238,11 +1238,20 @@ async function submitRating() {
 initRatingStars();
 
 // ===== MESSAGE BOARD =====
+const MSG_DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1543483293876355112/7-D_Wm3RERtlvkzXIoU4OjVFpZov-Vqo3h0k9io26A7tj3VkiFmyHfh1kcIXtjg1l4FN';
+
 function loadMessages() {
-  // Force reset to real Google Maps reviews on each visit
-  localStorage.removeItem('mma_messages');
-  renderMessages(defaultMessages);
+  const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null');
+  if (stored && stored.length > 0) {
+    // User already has messages saved — load them
+    renderMessages(stored);
+  } else {
+    // First visit — seed with default Google Maps reviews and save
+    localStorage.setItem('mma_messages', JSON.stringify(defaultMessages));
+    renderMessages(defaultMessages);
+  }
 }
+
 function addMessage() {
   const name = document.getElementById('msgName').value.trim();
   const cls = document.getElementById('msgClass').value.trim();
@@ -1250,14 +1259,39 @@ function addMessage() {
   if (!name || !text) return alert('Please enter your name and message!');
   const emojis = ['💌', '💝', '🌸', '✨', '🎓', '💫', '🌟', '❤️'];
   const msg = { name, class: cls || 'Student', text, emoji: emojis[Math.floor(Math.random() * emojis.length)] };
-  const stored = JSON.parse(localStorage.getItem('mma_messages') || 'null') || defaultMessages;
+  // Load existing messages from localStorage
+  const stored = JSON.parse(localStorage.getItem('mma_messages') || '[]');
   stored.unshift(msg);
+  // Save to localStorage (persists across refresh)
   localStorage.setItem('mma_messages', JSON.stringify(stored));
   renderMessages(stored);
+  // Also send to Discord as backup (persists forever)
+  sendMessageToDiscord(msg);
   document.getElementById('msgName').value = '';
   document.getElementById('msgClass').value = '';
   document.getElementById('msgText').value = '';
   fireConfetti();
+}
+
+function sendMessageToDiscord(msg) {
+  const starLabels = ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '⭐⭐⭐⭐⭐'];
+  const embed = {
+    title: '💌 New Message on Teachers Day Website',
+    color: 0xFFD700,
+    fields: [
+      { name: '👤 Name', value: msg.name, inline: true },
+      { name: '🎓 Class', value: msg.class, inline: true },
+      { name: '💬 Message', value: msg.text },
+      { name: '📅 Time', value: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), inline: true }
+    ],
+    footer: { text: 'Marvel Minds Academy — Teachers Day 2026' },
+    timestamp: new Date().toISOString()
+  };
+  fetch(MSG_DISCORD_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ embeds: [embed] })
+  }).catch(() => {});
 }
 function renderMessages(msgs) {
   const wall = document.getElementById('msgWall');
