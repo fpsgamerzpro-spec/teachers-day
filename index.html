@@ -860,7 +860,7 @@ textarea.msg-input { resize: vertical; min-height: 100px; }
 
 <!-- ===== MUSIC PLAYER ===== -->
 <audio id="bgMusic" loop preload="auto" autoplay>
-  <source src="aashayein.mp3" type="audio/mpeg">
+  <source src="kholo-kholo.mp3" type="audio/mpeg">
 </audio>
 <button class="music-btn playing" id="musicBtn" onclick="toggleMusic()" title="Play/Pause Music">🎵</button>
 
@@ -884,8 +884,29 @@ const teachersData = [
 ];
 
 const galleryData = [
-  { title: "Independence Day 2025", category: "celebrations", emoji: "🇮🇳", desc: "Independence Day celebration at Marvel Minds Academy", image: "https://i.ibb.co/dshP1D3v/IMG-20260815-WA0006.jpg" },
+  { title: "Independence Day 2026", category: "celebrations", emoji: "🇮🇳", desc: "Independence Day 2026 celebration at Marvel Minds Academy", image: "https://i.ibb.co/dshP1D3v/IMG-20260815-WA0006.jpg" },
   { title: "Teachers' Day 2024", category: "teachers-day", emoji: "👩‍🏫", desc: "Teachers' Day celebration honoring our beloved teachers", image: "https://i.ibb.co/RpMtBkG1/adasdaas.png" },
+  { title: "Republic Day", category: "celebrations", emoji: "🇮🇳", desc: "Republic Day celebration at Marvel Minds Academy", image: "https://i.ibb.co/bR1Sw1Mf/481288546-1026392542843787-653119372494690961-n.jpg" },
+  { title: "Sports Day", category: "activities", emoji: "⚽", desc: "Sports Day at Marvel Minds Academy — students competing with full energy!", image: "https://i.ibb.co/k7N7wr5/481083896-1021025876713787-2661225789028132948-n.jpg" },
+  { title: "Sports Day 2", category: "activities", emoji: "🏃", desc: "More fun from Sports Day at MMA", image: "https://i.ibb.co/jPFbq09g/481903974-1021025813380460-4640473917274361997-n.jpg" },
+  { title: "Magh Bihu", category: "celebrations", emoji: "🔥", desc: "Magh Bihu celebration at Marvel Minds Academy — traditional Assamese festivities!", image: "https://i.ibb.co/B2xW33yW/481023377-1021023776713997-8515746115053659518-n.jpg" },
+  { title: "Bihu Celebration", category: "celebrations", emoji: "🪘", desc: "Bihu dance and celebration at Marvel Minds Academy", image: "https://i.ibb.co/Z6fWnYRr/484171151-1034123968737311-1322212466147983370-n.jpg" },
+  { title: "Vacation Camp Activity", category: "activities", emoji: "🏕️", desc: "Activity workshop during vacation camp at MMA", image: "https://i.ibb.co/N6vdDXDm/482242052-1031038612379180-2489991718292125225-n.jpg" },
+  { title: "Republic Day 2023", category: "celebrations", emoji: "🇮🇳", desc: "Republic Day parade and celebration at MMA", image: "https://i.ibb.co/sdkPGsTm/481765646-1026392842843757-387967258931281973-n.jpg" },
+  { title: "Diya Competition", category: "activities", emoji: "🪔", desc: "Students participated in a Diya decoration competition — beautiful creations!", image: "https://i.ibb.co/zHBCwPMj/481083885-1021008370048871-2100338100669237885-n.jpg" },
+  { title: "Summer Vacation Activity", category: "activities", emoji: "☀️", desc: "Fun activities during summer vacation camp at MMA", image: "https://i.ibb.co/Hfn8Tv59/482212926-1031038792379162-116942730438412945-n.jpg" },
+  { title: "Pre Diwali Celebration", category: "celebrations", emoji: "🪔", desc: "Pre Diwali celebration at Marvel Minds Academy", image: "https://i.ibb.co/bgVdJJbM/480540221-1021008436715531-2951933166869978468-n.jpg" },
+  { title: "Sports Day 3", category: "activities", emoji: "🏅", desc: "Students showing their sports spirit at MMA", image: "https://i.ibb.co/MD8R0trg/481158607-1021024583380583-538840250292621801-n.jpg" },
+  { title: "Summer Activity 2", category: "activities", emoji: "🎨", desc: "Creative activities during summer vacation at MMA", image: "https://i.ibb.co/7NGtnDqx/482215356-1031037835712591-1067532697369558992-n.jpg" },
+  { title: "Summer Activity 3", category: "activities", emoji: "☀️", desc: "More summer vacation fun at Marvel Minds Academy", image: "https://i.ibb.co/sd9KnMrK/482227110-1031038472379194-7265016610944912357-n.jpg" },
+  { title: "Azadi Ka Amrit Mahotsav", category: "celebrations", emoji: "🇮🇳", desc: "MMA students marching in the field during Independence Day celebrations", image: "https://i.ibb.co/VWyGkn23/480967883-1021008253382216-6002958638829747199-n.jpg" },
+  { title: "Classroom", category: "classroom", emoji: "📚", desc: "Inside the classrooms of Marvel Minds Academy", image: "https://i.ibb.co/xSFKHpFk/482213616-1031038602379181-8982121417885219501-n.jpg" },
+  { title: "Children's Day", category: "celebrations", emoji: "🎈", desc: "Children's Day celebration at Marvel Minds Academy", image: "https://i.ibb.co/Wvk6XMDZ/481777095-1021008423382199-7498700838892546341-n.jpg" },
+  { title: "Summer Activity 4", category: "activities", emoji: "🌻", desc: "Summer vacation activity workshop at MMA", image: "https://i.ibb.co/0yvBvr6P/482228164-1031037612379280-6374616008557557040-n.jpg" },
+  { title: "Children's Day 2", category: "celebrations", emoji: "🎉", desc: "Children's Day fun at Marvel Minds Academy", image: "https://i.ibb.co/0pY25zZM/480847103-1021008320048876-7257216105212388494-n.jpg" },
+  { title: "Classroom 2", category: "classroom", emoji: "📖", desc: "Students learning in the classroom at MMA", image: "https://i.ibb.co/bMFkkhNF/482056372-1031038522379189-1430905097255356792-n.jpg" },
+  { title: "Classroom 3", category: "classroom", emoji: "✏️", desc: "Classroom moments at Marvel Minds Academy", image: "https://i.ibb.co/S43Y10Tn/482193011-1031038525712522-1224379305420283169-n.jpg" },
+  { title: "Classroom 4", category: "classroom", emoji: "🎒", desc: "Our bright classrooms at Marvel Minds Academy", image: "https://i.ibb.co/6cvN6nG4/481988885-1031038802379161-5190693278684300810-n.jpg" },
 ];
 
 const timelineData = [
